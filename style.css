@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #272727;
+}
+.clock{
+    height: 300px;
+    width: 300px;
+    background-color: #717171;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.clock ul li{
+    list-style: none;
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 5px;
+}
+
+.clock ul li span{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+}
+.clock::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+.needle{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.needle span{
+    width: 5px;
+    height: var(--h);
+    background-color: var(--clr);
+    position: absolute;
+    border-radius: 5px;
+}
